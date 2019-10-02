@@ -10,7 +10,11 @@ fieldset {
 }
 
 fieldset > div {
-  background-color:green;
+  background-color:rgb(225, 228, 225);
   display: inline-block;
   width:100%;
+}
+
+.grayback {
+  background: rgb(241, 241, 241);
 }

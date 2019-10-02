@@ -1,9 +1,11 @@
+<div class="grayback">
 <h3>LAVORAZIONI</h3>
 <div fxLayout="row">
-  <div fxLayout="column" >
+  <div fxLayout="column"  >
     <div *ngFor="let lav of lavorazioni">
-    <mat-card>{{ lav.nome }}</mat-card>
+    <mat-card style="margin:4px;">{{ lav.nome }}</mat-card>
   </div>
   </div>
 <app-lavorazioni-act></app-lavorazioni-act>
+</div>
 </div>
