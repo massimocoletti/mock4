@@ -17,4 +17,8 @@ fieldset > div {
 
 .grayback {
   background: rgb(241, 241, 241);
+  margin: 3px;
+  padding-top: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
 }

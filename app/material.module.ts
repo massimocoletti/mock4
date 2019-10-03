@@ -11,6 +11,7 @@ import {
 
 import {PlatformModule} from '@angular/cdk/platform';
 import {ObserversModule} from '@angular/cdk/observers';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 /**
  * NgModule that includes all Material modules that are required to serve the demo-app.
@@ -24,7 +25,8 @@ import {ObserversModule} from '@angular/cdk/observers';
     MatRippleModule,
     ObserversModule,
     PlatformModule,
-    MatCardModule
+    MatCardModule,
+    FlexLayoutModule
   ]
 })
 export class CustomMaterialModule {}

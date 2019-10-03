@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { lavlist } from '../lavorazioni.data';
+//import { lavlist } from '../lavorazioni.data';
 
 @Component({
   selector: 'app-lavorazioni',
@@ -8,6 +8,9 @@ import { lavlist } from '../lavorazioni.data';
   styleUrls: ['./lavorazioni.component.css']
 })
 export class LavorazioniComponent implements OnInit {
+  @Input() titolo : string;
+  @Input() lavorazioni : Object;
+/*
     lavorazioni =  [
 {
   codice:'000000010',
@@ -18,6 +21,7 @@ export class LavorazioniComponent implements OnInit {
   nome:'Verniciatura'
 }
 ];
+*/
 
   constructor() { 
   }

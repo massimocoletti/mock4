@@ -1,4 +1,4 @@
-export const lavorazioni = [
+export const lavlist = [
 {
   codice:'000000010',
   nome:'Fresatura'
