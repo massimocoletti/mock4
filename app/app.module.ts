@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { RouterModule, Routes, Router } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { OrderheaderComponent }  
        from './orderheader/orderheader.component';
@@ -11,8 +12,8 @@ import { LavorazioniActComponent }
        from './lavorazioni-act/lavorazioni-act.component';
 import { ClickButtonComponent } from './click-button/click-button.component';
 import { MaterialiActComponent } from './materiali-act/materiali-act.component';
-
-
+import { AcquisizioneComponent } from './acquisizione/acquisizione.component'
+import { PaneComponent } from './pane/pane.component';
 import { AppComponent } from './app.component';
 import { CustomMaterialModule } from './material.module';
 
@@ -20,20 +21,43 @@ import {
   //MdToolbarModule,
   //MdTabsModule,
   MatButtonModule,
-  //MdInputModule,
+  MatInputModule,
+  MatFormFieldModule,
+ //MdInputModule,
   //MdDatepickerModule,
   //MdNativeDateModule,
   //MdCheckboxModule,
   //MdRadioModule
 } from '@angular/material';
 
+const appRoutes: Routes = [
+  {
+    path: 'base',
+    component: PaneComponent,
+    data: { title: 'Heroes List' }
+  },
+  { path: 'acq', component: AcquisizioneComponent },
+  { path: '',
+    redirectTo: '/base',
+    pathMatch: 'full'
+  },
+  //{ path: '**', component: AppComponent }
+];
+
 @NgModule({
   imports:      [ BrowserModule, FormsModule, FlexLayoutModule, CustomMaterialModule,
-  MatButtonModule
+    ReactiveFormsModule,
+    MatInputModule,
+  MatButtonModule,
+  RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
    ],
   declarations: [ AppComponent , OrderheaderComponent
                   , LavorazioniComponent, LavorazioniActComponent,
-                  MaterialiActComponent , ClickButtonComponent],
+                  MaterialiActComponent , ClickButtonComponent,
+                  AcquisizioneComponent, PaneComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

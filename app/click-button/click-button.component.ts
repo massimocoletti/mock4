@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-click-button',
@@ -13,7 +14,7 @@ export class ClickButtonComponent implements OnInit {
   @Input() action: string;
   @Input() color: string;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
     console.log("sono qui "+this.label);
@@ -21,6 +22,7 @@ export class ClickButtonComponent implements OnInit {
 
   onClickMe() {
     console.log("premuto bottone "+this.action);
+    this.router.navigate(['../acq']);
   }
 
 }

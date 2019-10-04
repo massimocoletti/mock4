@@ -1,23 +1,2 @@
-<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="8px">
-  <app-orderheader fxFill></app-orderheader>
-  <div fxLayout="row" id="mainPane" >
-    <app-lavorazioni [lavorazioni]="lavlist"
-                     [titolo]="'LAVORAZIONI'"
-                     style="margin-right: 15px;"></app-lavorazioni>
-    <app-lavorazioni-act style="margin-right: 30px; margin-top: 60px;"></app-lavorazioni-act>
-    <app-lavorazioni [lavorazioni]="matlist"
-                     [titolo]="'MATERIALI'"
-                     style="margin-right: 15px;"></app-lavorazioni>
-    <app-materiali-act style="margin-top: 60px;"></app-materiali-act>
 
-  </div>
-  <!--
-  <mat-card fxFlex="50">
-	<div fxLayout="column">
-		<div fxFlex="30" class="action-blurb">This is a blurb.</div>
-		<div fxFlex="60" class="action-blurb" fxFlexOffset="5">This is a blurb.</div>
-		<div fxFlex="30" class="action-blurb" fxFlexOffset="5">This is a blurb.</div>
-	</div>
-</mat-card>
--->
-</div>
+<router-outlet></router-outlet>
