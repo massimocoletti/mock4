@@ -1,11 +1,15 @@
-<div fxLayout="column" fxLayoutAlign="center center">
-  <app-orderheader></app-orderheader>
-  <div fxLayout="row" id="mainPane" fxFlex="50">
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="8px">
+  <app-orderheader fxFill></app-orderheader>
+  <div fxLayout="row" id="mainPane" >
     <app-lavorazioni [lavorazioni]="lavlist"
-                     [titolo]="'LAVORAZIONI'"></app-lavorazioni>
-    <app-lavorazioni-act></app-lavorazioni-act>
-    <app-lavorazioni [lavorazioni]="lavlist"
-                     [titolo]="'MATERIALI'"></app-lavorazioni>
+                     [titolo]="'LAVORAZIONI'"
+                     style="margin-right: 15px;"></app-lavorazioni>
+    <app-lavorazioni-act style="margin-right: 30px; margin-top: 60px;"></app-lavorazioni-act>
+    <app-lavorazioni [lavorazioni]="matlist"
+                     [titolo]="'MATERIALI'"
+                     style="margin-right: 15px;"></app-lavorazioni>
+    <app-materiali-act style="margin-top: 60px;"></app-materiali-act>
+
   </div>
   <!--
   <mat-card fxFlex="50">

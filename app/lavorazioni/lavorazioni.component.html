@@ -1,10 +1,14 @@
-<div class="grayback">
-<h3>{{ titolo }}</h3>
-<div fxLayout="row">
-  <div fxLayout="column" fxLayoutGap="10px" >
-    <div *ngFor="let lav of lavorazioni">
-    <mat-card >{{ lav.nome }}</mat-card>
+<div class="grayback"  >
+<h4>{{ titolo }}</h4>
+
+  <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="top center"  >
+    <div *ngFor="let lav of lavorazioni" >
+    <mat-card style="width:190px; font-size:85%">{{ lav.nome }}
+      <br/><span>{{ lav.qta }}</span>
+      <span 
+      style="font-size:70%; text-align:right; margin-left:40px;">{{ lav.codice }}</span>
+    </mat-card>
   </div>
   </div>
-</div>
+
 </div>

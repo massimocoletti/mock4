@@ -9,6 +9,8 @@ import { LavorazioniComponent }
        from './lavorazioni/lavorazioni.component';
 import { LavorazioniActComponent }  
        from './lavorazioni-act/lavorazioni-act.component';
+import { ClickButtonComponent } from './click-button/click-button.component';
+import { MaterialiActComponent } from './materiali-act/materiali-act.component';
 
 
 import { AppComponent } from './app.component';
@@ -30,7 +32,8 @@ import {
   MatButtonModule
    ],
   declarations: [ AppComponent , OrderheaderComponent
-                  , LavorazioniComponent, LavorazioniActComponent],
+                  , LavorazioniComponent, LavorazioniActComponent,
+                  MaterialiActComponent , ClickButtonComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
