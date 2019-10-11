@@ -1,5 +1,5 @@
 <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="8px">
-  <app-orderheader fxFill></app-orderheader>
+  <app-orderheader [orders]="orders"  fxFill></app-orderheader>
   <div fxLayout="row" id="mainPane" >
     <app-lavorazioni [lavorazioni]="lavlist"
                      [titolo]="'LAVORAZIONI'"

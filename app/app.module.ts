@@ -16,6 +16,7 @@ import { AcquisizioneComponent } from './acquisizione/acquisizione.component'
 import { PaneComponent } from './pane/pane.component';
 import { AppComponent } from './app.component';
 import { CustomMaterialModule } from './material.module';
+import { Poinfo } from './poinfo';
 
 import {
   //MdToolbarModule,
@@ -46,18 +47,19 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, FlexLayoutModule, CustomMaterialModule,
-    ReactiveFormsModule,
-    MatInputModule,
-  MatButtonModule,
-  RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+                  ReactiveFormsModule,
+                  MatInputModule,
+                  MatButtonModule,
+                  RouterModule.forRoot(
+                    appRoutes,
+                    { enableTracing: true } // <-- debugging purposes only
+                  )
    ],
   declarations: [ AppComponent , OrderheaderComponent
                   , LavorazioniComponent, LavorazioniActComponent,
                   MaterialiActComponent , ClickButtonComponent,
-                  AcquisizioneComponent, PaneComponent],
+                  AcquisizioneComponent, PaneComponent
+                  ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

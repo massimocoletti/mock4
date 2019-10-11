@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Poinfo } from '../poinfo';
 
 @Component({
   selector: 'app-pane',
@@ -46,6 +47,18 @@ matlist = [
  nome:'PIATTO 200x8 FE360 '
 },
 ];
+ 
+  orders : Poinfo[] = [
+    {
+      nrpo: '88 A 1223',
+      prd_Descr: 'TONDO PROVA AA'
+    },
+    {
+      nrpo: '88 A 1R553',
+      prd_Descr: 'TONDO PROVA BB'
+    }
+
+  ];
 
   constructor() { }
 
