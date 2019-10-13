@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { InViewportModule } from 'ng-in-viewport';
+import { InViewportMetadata } from 'ng-in-viewport';
+
 import { Poinfo } from '../poinfo';
 
 @Component({
@@ -25,6 +28,12 @@ export class OrderheaderComponent implements OnInit {
       };
     }
 
+  }
+  highlightTile(event) {
+    //const { [InViewportMetadata]: { entry }, target, visible } = event;
+    console.log('Ora è visibile '
+    //+entry.toString()
+    );
   }
 
 }
