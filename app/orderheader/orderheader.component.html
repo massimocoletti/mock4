@@ -1,4 +1,6 @@
-<mat-card>
-{{ currentOrder.nrpo }}
-<h4>{{ currentOrder.prd_Descr }}</h4>
+<div fxLayout="row" style="overflow-x: auto; ">
+<mat-card *ngFor="let ord of orders" fxFill>
+{{ ord.nrpo }}
+<h4>{{ ord.prd_Descr }}</h4>
 </mat-card>
+</div>
