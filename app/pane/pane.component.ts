@@ -54,7 +54,15 @@ matlist = [
       prd_Descr: 'TONDO PROVA AA'
     },
     {
-      nrpo: '88 A 1R553',
+      nrpo: '12 A 1223',
+      prd_Descr: 'TONDO PROVA AA'
+    },
+    {
+      nrpo: '1234 A 1223',
+      prd_Descr: 'TONDO PROVA AA'
+    },
+    {
+      nrpo: '55 A 1R553',
       prd_Descr: 'TONDO PROVA BB'
     }
 
@@ -66,3 +74,4 @@ matlist = [
   }
 
 }
+
