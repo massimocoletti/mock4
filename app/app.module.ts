@@ -18,6 +18,8 @@ import { AppComponent } from './app.component';
 import { CustomMaterialModule } from './material.module';
 import { Poinfo } from './poinfo';
 
+import { SharedModule } from './shared/shared.module';
+
 import {
   //MdToolbarModule,
   //MdTabsModule,
@@ -46,9 +48,10 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, FlexLayoutModule, CustomMaterialModule,
-                  ReactiveFormsModule,
-                  MatInputModule,
+  imports:      [ SharedModule,
+        BrowserModule, FormsModule, FlexLayoutModule, CustomMaterialModule,
+        ReactiveFormsModule,
+        MatInputModule,
                   MatButtonModule,
                   RouterModule.forRoot(
                     appRoutes,

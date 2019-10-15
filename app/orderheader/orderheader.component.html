@@ -1,8 +1,11 @@
 <div fxLayout="row" class="noscroll" style="overflow-x: auto; ">
 <mat-card *ngFor="let ord of orders" fxFill
-inViewport
-[inViewportOptions]="{ partial: true, threshold: [0, 1] }"
- (inViewportAction)="highlightTile($event)"]>
+>
+ <!--
+     inViewport [inViewportOptions]="{ partial: true, threshold: [0, 1] }"
+ (inViewportAction)="highlightTile($event)"
+
+   -->
 {{ ord.nrpo }}
 <h4>{{ ord.prd_Descr }}</h4>
 </mat-card>
