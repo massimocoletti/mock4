@@ -7,6 +7,10 @@ import { Poinfo } from '../poinfo';
   styleUrls: ['./pane.component.css']
 })
 export class PaneComponent implements OnInit {
+
+podb = new Map();
+orders : Poinfo[];
+
 lavlist = [
 {
   codice:'000000010',
@@ -48,7 +52,12 @@ matlist = [
 },
 ];
  
-  orders : Poinfo[] = [
+
+
+  constructor() { }
+
+  ngOnInit() {
+    this.orders = [
     {
       nrpo: '88 A 1223',
       prd_Descr: 'TONDO PROVA AA'
@@ -67,16 +76,39 @@ matlist = [
     }
 
   ];
-
-  constructor() { }
-
-  ngOnInit() {
+    for (let o = 0 ; o<this.orders.length; o++) {
+      this.podb.set(this.orders[o].nrpo, {
+        order: this.orders[o],
+        matlist: o>0 ? this.matlist :
+        [
+{
+  codice:'UUU1',
+  qta:'KG 545',
+  nome:'materiale 1 '
+},
+{
+  codice:'UUU2',
+  qta:'KG 545',
+  nome:'materiale 2 '
+},
+{
+  codice:'PIA220X8',
+   qta:'MT 4.62',
+ nome:'PIATTO 200x8 FE360 '
+},
+]
+        ,
+        lavlist: this.lavlist
+      });
+    }
   }
 
   onOrderChanged(indx: number) {
     let newOrder : Poinfo = this.orders[indx];
     console.log('pane ha ricevuto ordine '+indx+' '+newOrder.nrpo);
-
+    let newpo = this.podb
+    this.lavlist = this.podb.get(newOrder.nrpo).lavlist;
+    this.matlist = this.podb.get(newOrder.nrpo).matlist;
   }
 }
 
