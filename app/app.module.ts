@@ -37,7 +37,7 @@ const appRoutes: Routes = [
   {
     path: 'base',
     component: PaneComponent,
-    data: { title: 'Heroes List' }
+    data: { title: 'Stato ordini di produzione' }
   },
   { path: 'acq', component: AcquisizioneComponent },
   { path: '',
@@ -48,14 +48,12 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports:      [ SharedModule,
-        BrowserModule, FormsModule, FlexLayoutModule, CustomMaterialModule,
-        ReactiveFormsModule,
-        MatInputModule,
-                  MatButtonModule,
-                  RouterModule.forRoot(
-                    appRoutes,
-                    { enableTracing: true } // <-- debugging purposes only
+  imports:[ SharedModule,
+    BrowserModule, FormsModule, FlexLayoutModule, CustomMaterialModule,
+    ReactiveFormsModule,
+    MatInputModule, MatButtonModule,
+    RouterModule.forRoot(
+      appRoutes,{ enableTracing: true } // <-- debugging purposes only
                   )
    ],
   declarations: [ AppComponent , OrderheaderComponent
@@ -63,6 +61,7 @@ const appRoutes: Routes = [
                   MaterialiActComponent , ClickButtonComponent,
                   AcquisizioneComponent, PaneComponent
                   ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  exports: [SharedModule]
 })
 export class AppModule { }

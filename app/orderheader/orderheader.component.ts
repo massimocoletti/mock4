@@ -14,6 +14,7 @@ export class OrderheaderComponent implements OnInit {
   currentOrder: Poinfo;
 
   constructor() {
+    rog: InViewportMetadata ;
    }
 
   ngOnInit() {
