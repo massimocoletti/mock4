@@ -1,11 +1,11 @@
 <div fxLayout="row" class="noscroll" style="overflow-x: auto; ">
-  <ng-container *ngFor="let ord of orders" 
+  <ng-container *ngFor="let ord of orders; index as i;" 
     
   >
     <mat-card  fxFill inViewport
-     [inViewportOptions]="{ partial: false, threshold: [0, 1] }"
+     [inViewportOptions]="{ partial: true, threshold: [0, 1] }"
       (inViewportAction)="onIntersection($event)"
-      id="{{ ord.nrpo }}"
+      id="{{ i }}"
     >
  <!--
      inViewport [inViewportOptions]="{ partial: true, threshold: [0, 1] }"
@@ -14,7 +14,7 @@
    -->
     {{ ord.nrpo }}
     <h4>{{ ord.prd_Descr }}</h4>
-    <p >iniziale</p>
+    <section><p id="fake">iniziale</p></section>
     </mat-card>
 </ng-container>
 </div>

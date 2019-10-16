@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { InViewportModule } from 'ng-in-viewport';
 import { InViewportMetadata } from 'ng-in-viewport';
 
@@ -11,6 +11,8 @@ import { Poinfo } from '../poinfo';
 })
 export class OrderheaderComponent implements OnInit {
   @Input() orders: Poinfo[];
+  @Output() current = new EventEmitter<number>();
+
   currentOrder: Poinfo;
 
   constructor() {
@@ -32,7 +34,10 @@ export class OrderheaderComponent implements OnInit {
   }
 
     public onIntersection({ target, visible }: { target: Element; visible: boolean }): void {
-      console.log(target.innerHTML+ visible ? ' visibile': 'nascosto');
+      console.log(target.id + visible + (visible ? ' visibile': 'nascosto'));
+      //const appDiv: HTMLElement = document.getElementById('app');
+      target.getElementsByTagName('section')[0].innerHTML = target.id;
+      if (visible) this.current.emit(+target.id);
     //this.renderer.addClass(target, visible ? 'active' : 'inactive');
     //this.renderer.removeClass(target, visible ? 'inactive' : 'active');
   }

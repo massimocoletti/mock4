@@ -73,5 +73,10 @@ matlist = [
   ngOnInit() {
   }
 
+  onOrderChanged(indx: number) {
+    let newOrder : Poinfo = this.orders[indx];
+    console.log('pane ha ricevuto ordine '+indx+' '+newOrder.nrpo);
+
+  }
 }
 
