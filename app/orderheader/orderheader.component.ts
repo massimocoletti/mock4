@@ -30,11 +30,11 @@ export class OrderheaderComponent implements OnInit {
     }
 
   }
-  highlightTile(event) {
-    //const { [InViewportMetadata]: { entry }, target, visible } = event;
-    console.log('Ora è visibile '
-    //+entry.toString()
-    );
+
+    public onIntersection({ target, visible }: { target: Element; visible: boolean }): void {
+      console.log(target.innerHTML+ visible ? ' visibile': 'nascosto');
+    //this.renderer.addClass(target, visible ? 'active' : 'inactive');
+    //this.renderer.removeClass(target, visible ? 'inactive' : 'active');
   }
 
 }

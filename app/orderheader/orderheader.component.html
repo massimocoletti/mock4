@@ -3,7 +3,9 @@
     
   >
     <mat-card  fxFill inViewport
-     [inViewportOptions]="{ partial: true, threshold: [0, 1] }"
+     [inViewportOptions]="{ partial: false, threshold: [0, 1] }"
+      (inViewportAction)="onIntersection($event)"
+      id="{{ ord.nrpo }}"
     >
  <!--
      inViewport [inViewportOptions]="{ partial: true, threshold: [0, 1] }"
@@ -12,6 +14,7 @@
    -->
     {{ ord.nrpo }}
     <h4>{{ ord.prd_Descr }}</h4>
+    <p >iniziale</p>
     </mat-card>
 </ng-container>
 </div>
